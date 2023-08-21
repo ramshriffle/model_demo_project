@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
     has_many :colleges, dependent: :destroy
 
-    validates :city, presence: true, uniqueness: {scope: :city, message: "City name already exits"}
+    validates :city, presence: true, uniqueness: {case_sensitive: false, message: "%{value} city already exits"}
 end
